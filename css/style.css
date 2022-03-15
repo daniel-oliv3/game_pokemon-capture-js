@@ -4,8 +4,39 @@ body {
     background-image: url(../img/land.png);
 }
 
+
+/* Player */
 .player {
     width: 80px;
     height: 100px;
-    border: 2px solid red;
+    background-image: url(../img/player_front.png);
+    background-size: 240px 100px;
+    background-position: -80px 0px;
+    position: fixed;
+}
+
+.player.active {
+    animation: .2s walk linear infinite;
+}
+
+@keyframes walk {
+    0%, 32% {
+        background-position: 0 0;
+    }
+    33%, 64%{
+        background-position: -80px 0;
+    }
+    66%, 100%{
+        background-position: -160px 0;
+    }
+}
+
+/* Arbusto */
+.bush {
+    width: 50px;
+    height: 40px;
+    background-image: url("../img/bush.png");
+    background-size: 100% 100%;
+    position: fixed;
+    z-index: -1;
 }
